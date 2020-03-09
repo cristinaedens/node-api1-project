@@ -11,10 +11,12 @@ server.get('/', (req, res) => {
     res.status(200).json({ API: "is running..." })
 });
 
+//This gets a list of users
 server.get('/api/users', (req, res) => {
     res.status(200).json(users)
 });
 
+//this adds new users
 server.post('/api/users', (req, res) => {
     const usersInfo = req.body;
 
@@ -24,6 +26,7 @@ server.post('/api/users', (req, res) => {
 
     res.status(201).json(usersInfo);
 });
+
 
 const PORT = 5000;
 server.listen(PORT, () =>
